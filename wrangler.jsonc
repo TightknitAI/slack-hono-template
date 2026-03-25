@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "slack-hono-example",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-03-14",
+
+  // KV namespace for storing OAuth installations
+  // Run: pnpm run setup:kv
+  "kv_namespaces": [
+    {
+      "binding": "SLACK_INSTALLATIONS",
+      "id": "b397979c7ec74ab58ebc63c9d6c695bd"
+    },
+    {
+      "binding": "SLACK_OAUTH_STATE",
+      "id": "54ca795befc344c58c7c85d308336de9"
+    }
+  ],
+
+  // Non-secret environment variables
+  "vars": {
+    "SLACK_BOT_SCOPES": "commands,chat:write,app_mentions:read,channels:history,im:history,groups:history"
+  }
+}

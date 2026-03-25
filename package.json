@@ -1,0 +1,34 @@
+{
+  "name": "slack-hono-example",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Example Slack app built with slack-hono on Cloudflare Workers",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "dev:tunnel": "vite dev & cloudflared tunnel --config cloudflared.yml run & wait",
+    "build": "vite build",
+    "deploy": "wrangler deploy",
+    "logs": "wrangler tail",
+    "typecheck": "tsc --noEmit",
+    "setup:kv": "wrangler kv namespace create SLACK_INSTALLATIONS && wrangler kv namespace create SLACK_OAUTH_STATE",
+    "setup:manifest": "bash scripts/setup-manifest.sh",
+    "manifest:copy": "bash scripts/copy-manifest.sh",
+    "setup:tunnel": "bash scripts/setup-tunnel.sh",
+    "setup:secrets": "bash scripts/setup-secrets.sh",
+    "install-app": "bash scripts/install-app.sh"
+  },
+  "dependencies": {
+    "hono": "^4.7.0",
+    "slack-cloudflare-workers": "^1.3.0",
+    "slack-hono": "file:../slack-hono"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.30.1",
+    "@cloudflare/workers-types": "^4.20250313.0",
+    "typescript": "^5.9.0",
+    "vite": "^8.0.2",
+    "wrangler": "^4.0.0"
+  },
+  "packageManager": "pnpm@10.32.1"
+}
