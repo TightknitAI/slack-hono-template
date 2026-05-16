@@ -1,8 +1,8 @@
 {
-  "name": "slack-hono-example",
+  "name": "slack-hono-template",
   "version": "0.1.0",
   "private": true,
-  "description": "Example Slack app built with slack-hono on Cloudflare Workers",
+  "description": "Template Slack app built with slack-hono on Cloudflare Workers",
   "type": "module",
   "scripts": {
     "dev": "vite dev",

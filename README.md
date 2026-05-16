@@ -1,6 +1,6 @@
-# slack-hono Example
+# slack-hono Template
 
-Example Slack app built with [slack-hono](https://github.com/slack-edge/slack-hono) and [slack-cloudflare-workers](https://github.com/slack-edge/slack-cloudflare-workers) on Cloudflare Workers.
+Template Slack app built with [slack-hono](https://github.com/slack-edge/slack-hono) and [slack-cloudflare-workers](https://github.com/slack-edge/slack-cloudflare-workers) on Cloudflare Workers.
 
 Demonstrates OAuth multi-workspace installation, slash commands, event handling, block actions, and view submissions — all running on the edge with KV-backed storage.
 
@@ -96,7 +96,7 @@ Deploy to Cloudflare Workers for a permanent URL that doesn't change.
 pnpm run deploy
 ```
 
-Note your Worker URL from the output (e.g. `https://slack-hono-example.your-subdomain.workers.dev`).
+Note your Worker URL from the output (e.g. `https://slack-hono-template.your-subdomain.workers.dev`).
 
 ### 2. Update manifest URLs
 

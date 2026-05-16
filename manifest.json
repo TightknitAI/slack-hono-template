@@ -1,7 +1,7 @@
 {
   "display_information": {
     "name": "Hono Bot",
-    "description": "Example Slack app built with slack-hono on Cloudflare Workers"
+    "description": "Template Slack app built with slack-hono on Cloudflare Workers"
   },
   "features": {
     "app_home": {

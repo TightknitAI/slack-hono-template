@@ -15,7 +15,7 @@ type Env = {
 
 const app = new Hono<Env>();
 
-app.get("/", (c) => c.text("slack-hono-example is running"));
+app.get("/", (c) => c.text("slack-hono-template is running"));
 
 app.all("/slack/*", async (c) => {
   const slack = new SlackHonoOAuthApp({

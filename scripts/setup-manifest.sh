@@ -5,7 +5,7 @@ MANIFEST="manifest.json"
 
 if [ -z "$1" ]; then
   echo "Usage: pnpm run setup:manifest <your-worker-url>"
-  echo "Example: pnpm run setup:manifest https://slack-hono-example.your-subdomain.workers.dev"
+  echo "Example: pnpm run setup:manifest https://slack-hono-template.your-subdomain.workers.dev"
   exit 1
 fi
 
