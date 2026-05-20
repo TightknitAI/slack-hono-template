@@ -1,6 +1,6 @@
 # slack-hono Template
 
-Template Slack app built with [slack-hono](https://github.com/slack-edge/slack-hono) and [slack-cloudflare-workers](https://github.com/slack-edge/slack-cloudflare-workers) on Cloudflare Workers.
+Template Slack app built with [@tightknitai/slack-hono](https://github.com/TightknitAI/slack-hono) and [slack-cloudflare-workers](https://github.com/slack-edge/slack-cloudflare-workers) on Cloudflare Workers.
 
 Demonstrates OAuth multi-workspace installation, slash commands, event handling, block actions, and view submissions — all running on the edge with KV-backed storage.
 
@@ -193,4 +193,4 @@ MIT
 
 ---
 
-Built with [slack-hono](https://github.com/slack-edge/slack-hono). Maintained by the [Tightknit](https://tightknit.ai) team.
+Built with [@tightknitai/slack-hono](https://github.com/TightknitAI/slack-hono). Maintained by the [Tightknit](https://tightknit.ai) team.
