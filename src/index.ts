@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { SlackHonoOAuthApp } from "slack-hono";
+import { SlackHonoOAuthApp } from "@tightknitai/slack-hono";
 import { KVInstallationStore, KVStateStore } from "slack-cloudflare-workers";
 
 type Env = {
