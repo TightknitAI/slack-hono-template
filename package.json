@@ -19,7 +19,7 @@
     "install-app": "bash scripts/install-app.sh"
   },
   "dependencies": {
-    "hono": "^4.12.32",
+    "hono": "^4.12.34",
     "slack-cloudflare-workers": "^1.3.10",
     "@tightknitai/slack-hono": "^0.1.1"
   },
