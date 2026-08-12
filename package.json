@@ -2,6 +2,7 @@
   "name": "slack-hono-template",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "description": "Template Slack app built with @tightknitai/slack-hono on Cloudflare Workers",
   "type": "module",
   "scripts": {
