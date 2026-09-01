@@ -45,7 +45,7 @@ pnpm install
 pnpm run setup:kv
 ```
 
-Copy the namespace IDs from the output and update `wrangler.jsonc`.
+Paste the two namespace IDs from the output into `wrangler.jsonc`, replacing the `REPLACE_WITH_INSTALLATIONS_KV_ID` and `REPLACE_WITH_OAUTH_STATE_KV_ID` placeholders.
 
 ### 3. Start the dev server with a tunnel
 
