@@ -13,6 +13,15 @@ type Env = {
   };
 };
 
+// Slack renders mrkdwn in message text and section blocks, so unescaped user
+// input can smuggle in mention tokens (<!here>, <@U123>) and hyperlinks
+// (<https://evil.example|Update your password>) that post under the bot's
+// identity. Escape the three characters Slack documents, & first so the
+// entities introduced by the later replacements aren't double-encoded.
+// https://api.slack.com/reference/surfaces/formatting#escaping-text
+const escapeMrkdwn = (text: string): string =>
+  text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
 const app = new Hono<Env>();
 
 app.get("/", (c) => c.text("slack-hono-template is running"));
@@ -59,7 +68,11 @@ app.all("/slack/*", async (c) => {
   slack.command(
     "/echo",
     async ({ payload }) => {
-      const text = payload.text || "(nothing to echo)";
+      // Escape once, here at intake — the escaped text is what gets stored in
+      // the button value, so the Approve/Reject handlers must not escape again.
+      const text = payload.text
+        ? escapeMrkdwn(payload.text)
+        : "(nothing to echo)";
       return {
         text,
         blocks: [
@@ -143,6 +156,10 @@ app.all("/slack/*", async (c) => {
   // Block actions
   // ---------------------
 
+  // The button values round-trip text that /echo already escaped, so these
+  // handlers post action.value as-is — escaping it again would render the
+  // literal entities (&lt;!here&gt;) back to the channel.
+
   slack.action(
     { type: "button", action_id: "approve_button" },
     async () => {},
@@ -179,7 +196,8 @@ app.all("/slack/*", async (c) => {
 
   // Handle the /hello modal submission
   slack.viewSubmission("hello_modal", async ({ payload }) => {
-    const name = payload.view.state.values.name_block.name_input.value ?? "world";
+    const submitted = payload.view.state.values.name_block.name_input.value;
+    const name = submitted ? escapeMrkdwn(submitted) : "world";
     return {
       response_action: "update",
       view: {
