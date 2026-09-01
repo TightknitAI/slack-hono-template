@@ -19,6 +19,6 @@
 
   // Non-secret environment variables
   "vars": {
-    "SLACK_BOT_SCOPES": "commands,chat:write,app_mentions:read,channels:history,im:history,groups:history"
+    "SLACK_BOT_SCOPES": "commands,chat:write,app_mentions:read"
   }
 }
