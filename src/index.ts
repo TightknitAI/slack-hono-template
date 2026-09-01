@@ -139,12 +139,6 @@ app.all("/slack/*", async (c) => {
     });
   });
 
-  // Log all messages (skip bot messages)
-  slack.anyMessage(async ({ payload }) => {
-    if ("bot_id" in payload && payload.bot_id) return;
-    console.log(`Message in ${payload.channel}: ${payload.text}`);
-  });
-
   // ---------------------
   // Block actions
   // ---------------------
