@@ -16,14 +16,14 @@
     "slash_commands": [
       {
         "command": "/hello",
-        "url": "https://slack-dev.tightknit.online/slack/events",
+        "url": "https://YOUR_WORKER_URL/slack/events",
         "description": "Say hello",
         "usage_hint": "say hello",
         "should_escape": false
       },
       {
         "command": "/echo",
-        "url": "https://slack-dev.tightknit.online/slack/events",
+        "url": "https://YOUR_WORKER_URL/slack/events",
         "description": "Echo your message back",
         "usage_hint": "[message]",
         "should_escape": false
@@ -32,7 +32,7 @@
   },
   "oauth_config": {
     "redirect_urls": [
-      "https://slack-dev.tightknit.online/slack/oauth_redirect"
+      "https://YOUR_WORKER_URL/slack/oauth_redirect"
     ],
     "scopes": {
       "bot": [
@@ -44,7 +44,7 @@
   },
   "settings": {
     "event_subscriptions": {
-      "request_url": "https://slack-dev.tightknit.online/slack/events",
+      "request_url": "https://YOUR_WORKER_URL/slack/events",
       "bot_events": [
         "app_home_opened",
         "app_mention"
@@ -52,7 +52,7 @@
     },
     "interactivity": {
       "is_enabled": true,
-      "request_url": "https://slack-dev.tightknit.online/slack/events"
+      "request_url": "https://YOUR_WORKER_URL/slack/events"
     },
     "org_deploy_enabled": false,
     "socket_mode_enabled": false,

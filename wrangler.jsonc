@@ -4,16 +4,16 @@
   "main": "src/index.ts",
   "compatibility_date": "2025-03-14",
 
-  // KV namespace for storing OAuth installations
-  // Run: pnpm run setup:kv
+  // KV namespaces for OAuth installations and OAuth state —
+  // run: pnpm run setup:kv, then paste the IDs from the output here
   "kv_namespaces": [
     {
       "binding": "SLACK_INSTALLATIONS",
-      "id": "b397979c7ec74ab58ebc63c9d6c695bd"
+      "id": "REPLACE_WITH_INSTALLATIONS_KV_ID"
     },
     {
       "binding": "SLACK_OAUTH_STATE",
-      "id": "54ca795befc344c58c7c85d308336de9"
+      "id": "REPLACE_WITH_OAUTH_STATE_KV_ID"
     }
   ],
 
