@@ -25,11 +25,11 @@
     "@tightknitai/slack-hono": "^0.1.2"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.53.1",
-    "@cloudflare/workers-types": "^5.20260823.1",
+    "@cloudflare/vite-plugin": "^1.54.2",
+    "@cloudflare/workers-types": "^5.20260831.1",
     "typescript": "^5.9.0",
     "vite": "^8.2.2",
-    "wrangler": "^4.125.0"
+    "wrangler": "^4.127.1"
   },
   "packageManager": "pnpm@10.32.1"
 }
