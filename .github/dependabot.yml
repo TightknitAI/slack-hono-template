@@ -6,7 +6,18 @@ updates:
       interval: weekly
     open-pull-requests-limit: 5
     groups:
-      minor-and-patch:
+      # Development dependencies never reach the deployed Worker, so
+      # dependabot-automerge.yml merges their minor/patch bumps without review.
+      # They get their own PR so a production bump can never ride along.
+      dev-minor-and-patch:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+      # Production dependencies ship in the deployed Worker. Their PRs are
+      # never auto-merged; a human must read the diff first.
+      prod-minor-and-patch:
+        dependency-type: production
         update-types:
           - minor
           - patch

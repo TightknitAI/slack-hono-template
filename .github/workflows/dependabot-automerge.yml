@@ -17,15 +17,25 @@ jobs:
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: Enable auto-merge for minor/patch updates
-        if: steps.metadata.outputs.update-type != 'version-update:semver-major'
+      # Only minor/patch bumps of development dependencies merge without review.
+      # Production dependencies ship in the deployed Worker and GitHub Actions
+      # run with repository credentials, so both wait for a human to read the
+      # diff. For grouped PRs, fetch-metadata reports `direct:production` when
+      # any dependency in the group is a production dependency, so a mixed
+      # group is held for review as well.
+      - name: Enable auto-merge for minor/patch dev-dependency updates
+        if: >-
+          steps.metadata.outputs.update-type != 'version-update:semver-major' &&
+          steps.metadata.outputs.dependency-type == 'direct:development'
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Approve PR
-        if: steps.metadata.outputs.update-type != 'version-update:semver-major'
+        if: >-
+          steps.metadata.outputs.update-type != 'version-update:semver-major' &&
+          steps.metadata.outputs.dependency-type == 'direct:development'
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
