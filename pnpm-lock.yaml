@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@tightknitai/slack-hono':
         specifier: ^0.1.2
-        version: 0.1.2(hono@4.13.3)
+        version: 0.1.2(hono@4.13.5)
       hono:
-        specifier: ^4.13.3
-        version: 4.13.3
+        specifier: ^4.13.5
+        version: 4.13.5
       slack-cloudflare-workers:
         specifier: ^1.3.10
         version: 1.3.10
@@ -584,8 +584,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  hono@4.13.3:
-    resolution: {integrity: sha512-r8AO2mYHoLxSHkgafNeC/BXyb2vWRxD3jem4Ts+ptav8oTG5FIRifAjuJEmZI4bSvvc2ns0GxmIYiZnHqN3mMw==}
+  hono@4.13.5:
+    resolution: {integrity: sha512-O6+/eCYRkzzzy0rPWwKLiGBR1nFuUPZynnwjxN1MBA62NNqbT0wQEzQyK2gSO5yDIDB336sXQleAhOHrzlYyKw==}
     engines: {node: '>=16.9.0'}
 
   kleur@4.1.5:
@@ -1127,9 +1127,9 @@ snapshots:
 
   '@speed-highlight/core@1.2.24': {}
 
-  '@tightknitai/slack-hono@0.1.2(hono@4.13.3)':
+  '@tightknitai/slack-hono@0.1.2(hono@4.13.5)':
     dependencies:
-      hono: 4.13.3
+      hono: 4.13.5
       slack-edge: 1.3.17
 
   blake3-wasm@2.1.5: {}
@@ -1176,7 +1176,7 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  hono@4.13.3: {}
+  hono@4.13.5: {}
 
   kleur@4.1.5: {}
 
