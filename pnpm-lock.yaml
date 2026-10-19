@@ -6,6 +6,7 @@ settings:
 
 overrides:
   undici@>=7.0.0 <7.29.1: '>=7.29.1 <8.0.0'
+  slack-cloudflare-workers>@cloudflare/workers-types: ^5.20260823.1
 
 importers:
 
@@ -88,9 +89,6 @@ packages:
     engines: {node: '>=16'}
     cpu: [x64]
     os: [win32]
-
-  '@cloudflare/workers-types@4.20260702.1':
-    resolution: {integrity: sha512-mOhf5TUEB1m2vPrxtqoIGfz0fUC9xyxRDx5gWHy5s+OCo6dcV+g7wI1R7gYCMFohhqF/2y2xeKVwMwCJjfn/WA==}
 
   '@cloudflare/workers-types@5.20260823.1':
     resolution: {integrity: sha512-HdBVDR/gecQ5QwB+DZ9kB5yjNZLS85fe8bMB2K/k0xmCvaoMlAFrQQGLaCBYR00j+i9aTkQzwfrPInVZwlMPwQ==}
@@ -859,8 +857,6 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20260820.1':
     optional: true
 
-  '@cloudflare/workers-types@4.20260702.1': {}
-
   '@cloudflare/workers-types@5.20260823.1': {}
 
   '@cspotcode/source-map-support@0.8.1':
@@ -1317,7 +1313,7 @@ snapshots:
 
   slack-cloudflare-workers@1.3.10:
     dependencies:
-      '@cloudflare/workers-types': 4.20260702.1
+      '@cloudflare/workers-types': 5.20260823.1
       slack-edge: 1.3.17
 
   slack-edge@1.3.17:
