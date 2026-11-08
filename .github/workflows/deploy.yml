@@ -13,6 +13,9 @@ concurrency:
 
 jobs:
   deploy:
+    # Copies of the template deploy; the template repo itself has no Cloudflare token.
+    if: ${{ !github.event.repository.is_template }}
+    environment: production
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
